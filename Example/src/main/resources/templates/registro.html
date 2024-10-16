@@ -9,7 +9,7 @@
         crossorigin="anonymous">
     <title>Registro</title>
     <link rel="stylesheet" href="css/login.css">
-
+	<link rel="icon" type="image/png" href="images/logostore.png">
 
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<!-- Magnific Popup -->
@@ -179,54 +179,77 @@
                             <form th:action="@{/personas}" th:object="${persona}" method="POST" action="login.html" class="needs-validation" novalidate="" autocomplete="on">
                                 <div class="mb-3">
                                     <label class="mb-2 text-muted" for="name">Nombres</label>
-                                    <input id="name" type="text" th:field="*{nombre}" placeholder="Ingrese su nombre" class="form-control" name="name" value="" required
-                                        autofocus>
+                                    <input id="name" type="text" th:field="*{nombre}" placeholder="Ingrese su nombre" class="form-control" name="name" value="" required autofocus>
                                     <div class="invalid-feedback">
-                                        Name is required
+                                        Nombre inválido
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
                                     <label class="mb-2 text-muted" for="last_name">Apellido Paterno</label>
-                                    <input id="last_name" type="text" class="form-control" name="apPaterno" th:field="*{apPaterno}" placeholder="Ingrese su apellido Paterno" value="" required
-                                        autofocus>
+                                    <input type="text" class="form-control" name="apPaterno" th:field="*{apPaterno}" placeholder="Ingrese su apellido Paterno" value="" required autofocus>
                                     <div class="invalid-feedback">
-                                        last name is required
+                                        Apellido Patero inválido
                                     </div>
                                 </div>
 								<div class="mb-3">
                                     <label class="mb-2 text-muted" for="last_name">Apellido Materno</label>
-                                    <input id="last_name" type="text" class="form-control" name="last_name" value="" required
-                                        autofocus>
+                                    <input th:field="*{apMaterno}" type="text" class="form-control" name="apMaterno" placeholder="Ingrese su apellido Materno" value="" required autofocus>
                                     <div class="invalid-feedback">
-                                        last name is required
+                                        Apellido Materno inválido
                                     </div>
                                 </div>
 
-                                <div class="mb-3">
-                                    <label class="mb-2 text-muted" for="email">Dirección E-Mail</label>
-                                    <input id="email" type="email" class="form-control" name="email" value="" required>
+								<div class="mb-3">
+									<label class="mb-2 text-muted" for="telefono">Telefono</label>
+									<input type="number" name="telefono" th:field="*{telefono}" class="form-control" placeholder="Ingrese su numero de celular" required>
+									<div class="invalid-feedback">
+                                        Telefono inválido
+                                    </div>
+								</div>
+
+								<div class="mb-3">
+                                    <label class="mb-2 text-muted" for="email">Correo</label>
+                                    <input type="email" name="correo" th:field="*{correo}" class="form-control" placeholder="Ingrese su correo"  value="" required>
                                     <div class="invalid-feedback">
                                         Correo inválido
                                     </div>
                                 </div>
 
+								<div class="mb-3">
+                                    <label class="mb-2 text-muted" for="email">Direccion</label>
+                                    <input type="email" name="direccion" th:field="*{direccion}" class="form-control" placeholder="Digite su dirección" value="" required>
+                                    <div class="invalid-feedback">
+                                        dirección inválido
+                                    </div>
+                                </div>
+
+								<div class="mb-3">
+									<label class="mb-2 text-muted" for="dni">DNI</label>
+									<input type="number" name="dni" th:field="*{dni}" class="form-control" placeholder="Digite su dni" required>
+									<div class="invalid-feedback">
+                                        DNI inválido
+                                    </div>
+								</div>
+
+
                                 <div class="mb-3">
-                                    <label class="mb-2 text-muted" for="password">Contraseña</label>
-                                    <input id="password" type="password" class="form-control" name="password" required>
+                                    <label class="mb-2 text-muted" for="contraseña">Contraseña</label>
+                                    <input id="password" type="contraseña" th:field="*{contraseña}" class="form-control" name="contraseña" placeholder="Digite su nueva contraseña" required>
                                     <div class="invalid-feedback">
                                         La contraseña es requerida
                                     </div>
                                 </div>
+					
 
                                 <div class="form-check mb-3">
                                     <input type="checkbox" name="remember" id="remember" class="form-check-input">
                                     <label for="remember" class="form-check-label form-text">Tengo 13 años o más y acepto los <a href="#" class="text-secondary">términos y condiciones.</a></label>
                                 </div>
 
-                                <div class="align-items-center d-flex">
+                                <div  class="text-center pt-3" class="align-items-center d-flex">
                                     <button type="submit" class="btn btn-secondary ms-auto">
-                                        Registrarse
+                                     <a href="Index.html"> Registrarse</a>  
                                     </button>
                                 </div>
 
